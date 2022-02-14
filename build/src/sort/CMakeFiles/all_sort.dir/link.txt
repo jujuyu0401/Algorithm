@@ -1,0 +1,2 @@
+/usr/bin/ar qc liball_sort.a  CMakeFiles/all_sort.dir/sort.cpp.o
+/usr/bin/ranlib liball_sort.a

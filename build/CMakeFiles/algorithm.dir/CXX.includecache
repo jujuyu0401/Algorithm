@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yuki/CPlusPlus/Algorithm/main.cpp
+bits/stdc++.h
+-
+src/search/bin_search.h
+/home/yuki/CPlusPlus/Algorithm/src/search/bin_search.h
+src/sort/sort.h
+/home/yuki/CPlusPlus/Algorithm/src/sort/sort.h
+src/sort/test.h
+/home/yuki/CPlusPlus/Algorithm/src/sort/test.h
+algorithm
+-
+cmath
+-
+
+/home/yuki/CPlusPlus/Algorithm/src/search/bin_search.h
+vector
+-
+
+/home/yuki/CPlusPlus/Algorithm/src/sort/sort.h
+vector
+-
+
+/home/yuki/CPlusPlus/Algorithm/src/sort/test.h
+

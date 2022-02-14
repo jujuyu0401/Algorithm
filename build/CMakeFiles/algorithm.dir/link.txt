@@ -1,0 +1,1 @@
+/usr/bin/g++  -fsanitize=undefined,address,leak -fno-omit-frame-pointer -g   CMakeFiles/algorithm.dir/main.cpp.o  -o algorithm  src/search/liball_search.a src/sort/liball_sort.a 

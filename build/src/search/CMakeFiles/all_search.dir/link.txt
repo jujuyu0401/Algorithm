@@ -1,0 +1,2 @@
+/usr/bin/ar qc liball_search.a  CMakeFiles/all_search.dir/bin_search.cpp.o
+/usr/bin/ranlib liball_search.a
