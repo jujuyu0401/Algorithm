@@ -1,15 +1,15 @@
 #include "sort.h"
 #include <iostream>
-#include "test.h"
+#include "test.hpp"
 
 namespace algorithm_sort {
     Sort::Sort()
     {
     }
 
-    void Sort::setArray(std::vector<int>* array)
+    void Sort::setArray(std::vector<int>* a_array)
     {
-        m_p_array = array;
+        m_p_array = a_array;
 
     }
 
@@ -160,8 +160,74 @@ namespace algorithm_sort {
         }
     }
 
-    void Sort::heapSort()
+    void Sort::heapSortArray()
     {
+        if(isNoNeeded()){
+            return ;
+        }
+        int index_last = m_p_array->size() - 1;
+        for(int i = (index_last - 1) / 2; i >= 0; --i){
+            if( i * 2 + 2 <= m_p_array->size() -1){
+                if( (*m_p_array)[i * 2 + 1] <= (*m_p_array)[i * 2 + 2]){
+                    if( (*m_p_array)[i * 2 + 1] < (*m_p_array)[i] ){
+                        std::swap((*m_p_array)[i * 2 + 1], (*m_p_array)[i]);
+                        heapAdjust(i * 2 + 1);
+                    }
+                }
+                else if( (*m_p_array)[i * 2 + 1] > (*m_p_array)[i * 2 + 2]){
+                    if((*m_p_array)[i * 2 + 2] < (*m_p_array)[i]){
+                        std::swap((*m_p_array)[i * 2 + 2], (*m_p_array)[i]);
+                        heapAdjust(i * 2 + 2);
+                    }
+                }
+            }
+            else if( (*m_p_array)[i * 2 + 1] < (*m_p_array)[i]){
+                std::swap((*m_p_array)[i * 2 + 1], (*m_p_array)[i]);
+                heapAdjust(i * 2 + 1);
+            }
+
+
+
+
+
+        }
+
+    }
+
+    void Sort::heapAdjust(int a_index)
+    {
+        // no child, then return
+        if(2 * a_index + 1 > m_p_array->size() - 1){
+            return ;
+        }
+        // only left child, compare and swap
+        if(2 * a_index + 1 == m_p_array->size() - 1){
+            if((*m_p_array)[a_index] > (*m_p_array)[a_index * 2 + 1]){
+                std::swap((*m_p_array)[a_index], (*m_p_array)[a_index * 2 + 1]);
+            }
+            return ;
+        }
+
+        //
+        int value = (*m_p_array)[a_index * 2 + 1] <= (*m_p_array)[a_index * 2 + 2] ? (*m_p_array)[a_index * 2 + 1]: (*m_p_array)[a_index * 2 + 2];
+        if( (*m_p_array)[a_index] <= value){
+            return ;
+        }
+        if( value == (*m_p_array)[a_index * 2 + 1]){
+            std::swap((*m_p_array)[a_index], (*m_p_array)[a_index * 2 + 1]);
+            heapAdjust(a_index * 2 + 1);
+        }
+        else{
+            std::swap((*m_p_array)[a_index], (*m_p_array)[a_index * 2 + 2]);
+            heapAdjust(a_index * 2 + 2);
+        }
+    }
+
+    void Sort::binMerge()
+    {
+        if(isNoNeeded()){
+            return ;
+        }
 
     }
 

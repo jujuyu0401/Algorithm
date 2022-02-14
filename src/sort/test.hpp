@@ -1,3 +1,6 @@
+#ifndef __SNDFNSD
+#define __SNDFNSD
+
 template<class T>
 void swappp(T& a, T&b)
 {
@@ -7,8 +10,4 @@ void swappp(T& a, T&b)
 }
 
 
-
-inline void print()
-{
-    std::cout << "11" << std::endl;
-}
+#endif

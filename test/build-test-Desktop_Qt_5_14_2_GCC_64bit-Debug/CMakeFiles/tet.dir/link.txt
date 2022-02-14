@@ -1,1 +1,0 @@
-/usr/bin/g++  -fsanitize=address -g   CMakeFiles/tet.dir/ecnu.cpp.o CMakeFiles/tet.dir/main.cpp.o  -o tet 
